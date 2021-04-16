@@ -15,6 +15,7 @@ struct node
 struct node* new_node(int data)
 {
     struct node* node = (struct node*)malloc(sizeof(struct node));
+
     node->data = data;
     node->left = NULL;
     node->right = NULL;
@@ -37,6 +38,7 @@ void pre_order(struct node* node)
 {
     if(node == NULL)
         return;
+
     cout<<node->data<<" ";
     pre_order(node->left);
     pre_order(node->right);
@@ -46,6 +48,7 @@ void post_order(struct node* node)
 {
      if(node == NULL)
         return;
+
      post_order(node->left);
      post_order(node->right);
      cout<<node->data<<" ";
@@ -53,8 +56,6 @@ void post_order(struct node* node)
 
 int main()
 {
-
-
     struct node* root = new_node(1);
     root->left = new_node(2);
     root->right = new_node(3);
@@ -65,7 +66,6 @@ int main()
     char key;
     int parent;
     cout<<"1->InOrder Traverse\n2->PreOrder Traverse\n3->PostOrder Traverse\n\n";
-
     while(x!=0)
     {
         cout<<"Enter choice:";
